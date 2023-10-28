@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* Element Selector */
+        div {
+           /* background-color: red; */
+        }
+        .red{ /* Class Selector */
+            background-color: red;
+        }
+        /* Id selector */
+        #green{   
+            background-color: green;
+        }
+        /* child selector*/
+         div > p{ 
+                color: blue;
+                background-color: brown;
+         }
+         /* Descedant Selector */
+         div p{   
+            color: blue;
+            background-color: brown;
+         }
+         /* Universal Selector */
+         * {
+            margin: 0;
+            padding: 0;
+         }
+         /* Pseudo Selector */
+         a:visited{
+            color: pink
+         }
+         a:link{
+            color: green
+         }
+         a:active{
+            background-color: red;
+         }
+         a:hover{
+            background-color: yellow;
+         }
+         p:first-child{
+            background-color: aqua;
+         }
+    </style>
+</head>
+<body>
+    <main calss="one">
+        <p>I am first</p>
+        <p>Iam second</p>
+    </main>
+    <div class="red"> <!--Class selector-->
+        I am a div
+        <p>I am a para inside div</p> <!--child selector only in this line-->
+        <article>
+            <p>I am a para inside div</p> <!--in this line child selector will not apply because this line under article line-->
+        </article>
+    </div>
+    <div id="green"> <!--id selector-->
+        I am another div
+    </div>
+    <a href="https://www.google.com">Go to Google</a>
+    <a href="https://www.facebook2.com">Go to Facebook</a>
+</body>
+</html>
