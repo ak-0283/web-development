@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS Selectors</title>
+    <style>
+        /* .box:first-child{                      first child ka matlab hai first line
+            background-color: red; 
+        } */
+        /* .box::first-line{        first line ka matlab hai each div class has take first line
+            color: red;  
+        } */
+        /* .boxes *{               star ka matlab saare boxes mai apply ho jayega
+            color: blue;
+            border: 2px solid black;
+        }
+        p, a, .box,[data-color="primary"]{
+            /* margin-top: 45px;           margin matlab uppar se change hoga 
+            padding-top: 45px;          padding matlab box mai change hoga
+
+        } */
+        /* .box:nth-child(even){
+            background-color: blue;
+        }*/
+        /* .box:nth-last-child(1){
+            background-color: red;                            niche se top krna
+        } */
+        .boxes::before {       /*CSS a through element ko dynamically insert kiya jaa skta hai*/
+            content: "Abhay is good";
+            color: rgb(0, 255, 0);
+        }
+        .boxes::after{
+            content: "sigma course is also good.";
+            color: red;
+        }
+        ::selection{                 /*ye hamara jo selector hai wo selected element ko pe use hoga*/
+            background-color: black;
+            color: aqua;
+        }
+        .box::first-letter{
+            color: peru;
+            font-size: 45px;
+        }   
+        input::placeholder{
+            color: blue;
+            font-size: 15px;
+        }     
+    </style> 
+</head>
+<body>
+    <div class="boxes">
+        <div data-color="primary" class="box">I am a box</div>
+        <div class="box">Hey i am a box</div>
+        <div class="box">Hey i am a box</div>
+        <input type="text" placeholder="Type your name here"
+    </div>
+</body>
+</html>
