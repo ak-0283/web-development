@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inserting & removing elements using javascript</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container red bg-green">
+        <div class="box" style ="display: flex;" data-createdby="abhay" data-concept="rohan">hey i am a box</div>
+        <div class="box">hey i am a box</div>
+        <script>
+            //let div= document.createElement("div");
+            //div.innerHTML= "i have been inserted <b>by abhay</b>"
+            //div.setAttribute("class","created");
+            //document.querySelector(".container").before(div)
+            let cont=document.querySelector(".container")
+            cont.insertAdjacentHTML("beforebegin","<br>i am insert</b>")
+        </script>
+    </div>
+</body>
+</html>
+<!-- using toogle method using javascript-->
