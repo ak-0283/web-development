@@ -1,0 +1,74 @@
+//async function ka matlb wo background mai chalta rahega
+
+//async function getData(){
+//   //simulate get data from a server
+//   return new Promise((resolve, reject)=>{
+//        setTimeout(() => {
+//                resolve(455)
+//        }, 3500);
+//    })
+//}
+
+
+// settle means resolve or reject
+// resolve means promise has settled successfully
+// reject means promise has not settled successfully
+
+
+async function getData(){
+    //simulate get data from a server
+    //let x = await fetch('https://jsonplaceholder.typicode.com/todos/1')     //using here fetch api
+    let x = await fetch('https://jsonplaceholder.typicode.com/posts',{
+        method: 'POST',
+        body: JSON.stringify({
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }),
+        headers: {
+            "content-type": 'aplication/json; charset=UTF-8',
+        },
+    })
+    let data = await x.json()
+    //let data = await x.text()
+    //console.log(data)
+    return data
+    //return 455
+    //.then(response => response.json())
+    //.then(json => console.log(json))
+}
+async function main(){
+console.log("loading modules")
+
+console.log("do something else")
+
+console.log("load data")
+
+let data =  await getData()
+
+console.log(data)
+
+console.log("process data")
+
+console.log("task 2")
+}
+main()
+//example POST method implementation
+//     async function postdata(url="",data={}) {
+//         const response = await fetch(url, {
+//             method: "POST",
+//             "content-type": "application/json",
+//         },
+//         body: JSON.stringify(data),
+//         });
+//         return response.json();
+//     }
+//     
+//     postdata("https://example.com/answer",{ answer: 42}).then((data)=>{
+//         console.log(data);
+//     });
+// data.then((v)=>{
+// console.log(data)
+// console.log("process data")
+// console.log("task 2")
+// })
