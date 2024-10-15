@@ -1,5 +1,5 @@
 class User{
-
+    
     constructor(name){
         // invokes the setter
         this.name = name
